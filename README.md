@@ -1,7 +1,7 @@
 # Refokus (Responsive)
 
 A responsive frontend project, built using **React**, **Tailwind CSS**, **Locomotive Scroll** and **Framer Motion**.  
-This project replicates modern animations, clean layouts, and smooth interactions similar to Refokus’ design system.
+This project replicates modern animations, clean layouts, and smooth interactions.
 
 ---
 
