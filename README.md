@@ -1,6 +1,6 @@
-# Refokus Clone (Responsive)
+# Refokus (Responsive)
 
-A responsive frontend project inspired by **Refokus**, built using **React**, **Tailwind CSS**, and **Framer Motion**.  
+A responsive frontend project, built using **React**, **Tailwind CSS**, and **Framer Motion**.  
 This project replicates modern animations, clean layouts, and smooth interactions similar to Refokus’ design system.
 
 ---
