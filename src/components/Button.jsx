@@ -3,9 +3,10 @@ import { IoIosReturnRight } from "react-icons/io";
 
 const Button = ({title = "Get Started"}) => {
   return (
-    <div className='w-36 py-2 bg-zinc-100 text-black rounded-full flex justify-around items-center'>
-        <span className='text-sm'>{title}</span>
-        <IoIosReturnRight />
+    <div className='relative w-36 py-5 bg-zinc-100 text-black rounded-full flex justify-center items-center overflow-hidden group cursor-pointer'>
+        <span className='absolute inset-0 text-sm flex items-center justify-center gap-4 transition-transform duration-300 group-hover:-translate-y-full '>{title} <IoIosReturnRight /></span>
+        <span className='absolute inset-0 text-sm flex items-center justify-center gap-4 transition-transform duration-300 translate-y-full group-hover:translate-y-0 '>{title} <IoIosReturnRight /></span>
+        
     </div>
   )
 }

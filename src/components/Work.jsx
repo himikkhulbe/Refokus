@@ -45,13 +45,13 @@ const Work = () => {
 
   scrollYProgress.on("change", (data) => {
     function showImages(arr) {
-      setImages((prev) => 
-        prev.map((item, index) => 
+      setImages((prev) =>
+        prev.map((item, index) =>
           arr.indexOf(index) === -1
             ? { ...item, isActive: false }
             : { ...item, isActive: true }
         )
-      )
+      );
     }
 
     switch (Math.floor(data * 100)) {
@@ -81,17 +81,20 @@ const Work = () => {
 
   return (
     <div className="w-full">
-      <div className="relative max-w-screen-lg mx-auto">
-        <h1 className="text-[30vw] leading-none text-center font-medium select-none">
+      <div className="relative max-w-screen-lg mx-auto px-4">
+        {/* Responsive heading */}
+        <h1 className="text-[30vw] sm:text-[25vw] md:text-[30vw] max-md:pt-10 leading-none text-center font-medium select-none">
           work
         </h1>
+
+        {/* Positioned images */}
         <div className="absolute top-0 w-full h-full">
           {images.map(
             (elem, index) =>
               elem.isActive && (
                 <img
                   key={index}
-                  className="w-64 rounded-lg absolute -translate-x-[50%] -translate-y-[50%]"
+                  className="w-28 sm:w-40 md:w-52 lg:w-64 rounded-lg absolute -translate-x-[50%] -translate-y-[50%]"
                   style={{ top: elem.top, left: elem.left }}
                   src={elem.url}
                   alt=""

@@ -7,20 +7,20 @@ const Marquee = ({ imagesURL, direction }) => {
         initial={{ x: direction === "left" ? "0" : "-100%" }}
         animate={{ x: direction === "left" ? "-100%" : "0" }}
         transition={{repeat: Infinity, ease:"linear", duration:20}}
-        className="flex flex-shrink-0 gap-[8rem] py-2 px-[4rem]"
+        className="flex flex-shrink-0 max-md:gap-[4rem] gap-[8rem] py-2 max-md:px-[2rem] px-[4rem]"
       >
         {imagesURL.map((url) => (
-          <img src={url} className="w-28" />
+          <img src={url} className="w-28 max-md:w-20" />
         ))}
       </motion.div>
       <motion.div
         initial={{ x: direction === "left" ? "0" : "-100%" }}
         animate={{ x: direction === "left" ? "-100%" : "0" }}
         transition={{repeat: Infinity, ease:"linear", duration:20}}
-        className="flex flex-shrink-0 gap-[8rem] py-2 px-[4rem]"
+        className="flex flex-shrink-0 max-md:gap-[4rem] gap-[8rem] py-2 max-md:px-[2rem] px-[4rem]"
       >
         {imagesURL.map((url) => (
-          <img src={url} className="w-28" />
+          <img src={url} className="w-28 max-md:w-20" />
         ))}
       </motion.div>
     </div>

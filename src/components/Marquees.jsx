@@ -27,7 +27,7 @@ const Marquees = () => {
     "https://cdn.prod.website-files.com/664dc8b6bc52b504509197f0/666359b850995827afaa8db4_633c148b9b819badd7bbcde8_627a8d3e69e23713762e6b34_Vector.svg"
   ]]
   return (
-    <div className='bg-zinc-300 rounded-3xl my-14 relative overflow-hidden py-2'>
+    <div className='bg-zinc-300 rounded-3xl max-lg:my-8 my-14 relative overflow-hidden py-2'>
       {images.map((item, index) => <Marquee key={index} imagesURL = {item} direction={index === 0 ? "left" : "right"} />)}
     </div>
   )

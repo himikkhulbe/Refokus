@@ -6,7 +6,6 @@ import TTR from "../assets/TTR.webm";
 import Yahoo from "../assets/Yahoo.webm";
 import YIR from "../assets/YIR.webm";
 
-
 const Products = () => {
   let products = [
     {
@@ -40,38 +39,55 @@ const Products = () => {
   ];
 
   let [position, setPosition] = useState(0);
-  let [opacity, setOpacity] = useState(0)
+  let [opacity, setOpacity] = useState(0);
+
   const mover = (val) => {
     setPosition(val * 18);
   };
 
   const videos = [Arqitel, TTR, YIR, Yahoo];
-  
+
   return (
     <div className="mt-16 relative">
       {products.map((val, index) => (
-        <Product val={val} mover={mover} setOpacity={setOpacity} index={index} />
+        <Product
+          key={index}
+          val={val}
+          mover={mover}
+          setOpacity={setOpacity}
+          index={index}
+        />
       ))}
-      <div className="absolute top-0 w-full h-full pointer-events-none">
+
+      <div className="absolute top-0 w-full h-full pointer-events-none ">
         <motion.div
           initial={{ y: position }}
           animate={{ y: position + `rem`, opacity }}
           transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.3 }}
-          style={{opacity}}
-          className="window absolute w-[33rem] h-[18rem] left-[25%] overflow-hidden rounded-md"
+          style={{ opacity }}
+          className="max-lg:hidden window absolute 
+            w-[90%] sm:w-[24rem] md:w-[28rem] lg:w-[33rem] 
+            h-[12rem] sm:h-[14rem] md:h-[16rem] lg:h-[18rem] 
+            left-1/2 -translate-x-1/2 lg:left-[25%] lg:translate-x-0 
+            overflow-hidden rounded-md"
         >
-
           {videos.map((video, i) => (
             <motion.div
-            key={i}
-            animate={{ y: -position + `rem` }}
-            transition={{ease: [0.76, 0, 0.24, 1 ], duration: 0.3}}
-            className="w-full h-full"
-          >
-            <video className="w-full h-full object-cover" src={video} autoPlay loop muted playsInline></video>
-          </motion.div>
+              key={i}
+              animate={{ y: -position + `rem` }}
+              transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.3 }}
+              className="w-full h-full"
+            >
+              <video
+                className="w-full h-full object-cover"
+                src={video}
+                autoPlay
+                loop
+                muted
+                playsInline
+              ></video>
+            </motion.div>
           ))}
-
         </motion.div>
       </div>
     </div>
